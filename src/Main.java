@@ -1,7 +1,6 @@
 import Combat.Assassin;
 import Combat.Guerrier;
 import Combat.Partie;
-import Combat.Personnage;
 
 public class Main {
     public static void main(String[] args) {

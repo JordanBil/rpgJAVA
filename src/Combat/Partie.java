@@ -37,32 +37,29 @@ public class Partie {
         this.nbrTour = nbrTour;
     }
 
-    // Méthode qui gère la partie
+    //METHODES
     public String lancerPartie() {
         System.out.println("Début de la partie entre " + joueur1.getNom() + " et " + joueur2.getNom() + " !");
 
         while (nbrTour > 0) {
             System.out.println("--- Tour " + (nbrTour) + " ---");
 
-            // Joueur 1 attaque Joueur 2
             joueur1.attaquer(joueur2);
             if (joueur2.getVie() <= 0) {
                 System.out.println("🏆 " + joueur1.getNom() + " remporte la partie !");
                 return joueur1.getNom() + " gagne !";
             }
 
-            // Joueur 2 attaque Joueur 1
             joueur2.attaquer(joueur1);
             if (joueur1.getVie() <= 0) {
                 System.out.println("🏆 " + joueur2.getNom() + " remporte la partie !");
                 return joueur2.getNom() + " gagne !";
             }
 
-            // Décrémentation du nombre de tours restants
             nbrTour++;
         }
 
-        // Fin de la partie, vérification de l'état des joueurs
+        // Fin de la partie
         if (joueur1.getVie() > 0 && joueur2.getVie() > 0) {
             System.out.println("🤝 Match nul !");
             return "Égalité !";

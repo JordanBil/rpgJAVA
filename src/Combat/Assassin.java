@@ -9,14 +9,14 @@ public class Assassin extends Personnage {
 
     //Constructor
     public Assassin(String nom, int vie, int attaque, int defense, int bonusAttaque) {
-        super(nom, vie, attaque, defense); // Appelle le constructeur de la classe mère
+        super(nom, vie, attaque, defense);
     }
 
     @Override
     public void attaquer(Personnage cible) {
 
         Random random = new Random();
-        boolean coupCritique = random.nextDouble() < CHANCE_CRITIQUE; // 5% de chance
+        boolean coupCritique = random.nextDouble() < CHANCE_CRITIQUE;
 
         int degats = this.getAttaque() - cible.getDefense();
 

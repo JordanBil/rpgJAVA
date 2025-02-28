@@ -3,12 +3,12 @@ import java.util.Random;
 
 
 public class Guerrier extends Personnage {
-    private int bonusDefense; // Bonus de défense spécifique au Guerrier
-    private static final double CHANCE_BONUS_DEFENSE = 0.05; // 5% de chance d'ajouter le bonusDefense
+    private int bonusDefense;
+    private static final double CHANCE_BONUS_DEFENSE = 0.05;
 
     // Constructeur
     public Guerrier(String nom, int vie, int attaque, int defense, int bonusDefense) {
-        super(nom, vie, attaque, defense); // Appelle le constructeur de la classe mère (Personnage)
+        super(nom, vie, attaque, defense);
         this.bonusDefense = bonusDefense;
     }
 
@@ -24,7 +24,7 @@ public class Guerrier extends Personnage {
     @Override
     public void attaquer(Personnage cible) {
         Random random = new Random();
-        boolean coupCritique = random.nextDouble() < CHANCE_BONUS_DEFENSE; // 5% de chance d'activer le bonusDefense
+        boolean coupCritique = random.nextDouble() < CHANCE_BONUS_DEFENSE;
 
         int degats = this.getAttaque() - cible.getDefense();
 

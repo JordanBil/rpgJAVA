@@ -62,7 +62,7 @@ public class Personnage {
     public void attaquer(Personnage personnage){
         int degats = this.getAttaque() - personnage.getDefense();
         if (degats > 0) {
-            personnage.setVie(personnage.getVie() - degats); // Réduction de la vie de la cible
+            personnage.setVie(personnage.getVie() - degats);
             System.out.println(this.nom + " attaque " + personnage.getNom() + " et inflige " + degats + " dégâts !");
         } else {
             System.out.println(this.nom + " attaque " + personnage.getNom() + " mais la défense absorbe tous les dégâts !");
